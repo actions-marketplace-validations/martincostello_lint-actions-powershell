@@ -21,7 +21,7 @@ env:
   PSSCRIPTANALYZER_VERSION: '1.24.0'
   TERM: xterm
   # renovate: datasource=github-releases depName=zizmor packageName=zizmorcore/zizmor
-  ZIZMOR_VERSION: '1.16.3'
+  ZIZMOR_VERSION: '1.18.0'
 
 jobs:
   lint:
@@ -35,7 +35,7 @@ jobs:
     steps:
 
     - name: Checkout code
-      uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+      uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       with:
         filter: 'tree:0'
         persist-credentials: false
@@ -50,7 +50,7 @@ jobs:
         args: -color
 
     - name: Lint workflows with zizmor
-      uses: zizmorcore/zizmor-action@e673c3917a1aef3c65c972347ed84ccd013ecda4 # v0.2.0
+      uses: zizmorcore/zizmor-action@e639db99335bc9038abc0e066dfcd72e23d26fb4 # v0.3.0
       with:
         persona: pedantic
         version: ${{ env.ZIZMOR_VERSION }}
